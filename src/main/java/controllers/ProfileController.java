@@ -72,8 +72,6 @@ public class ProfileController extends AbstractController {
 		return result;
 	}
 
-	// Action-3 ---------------------------------------------------------------		
-
 	@RequestMapping(value = "/action-2", method = RequestMethod.POST)
 	public ModelAndView action2Post(@Valid final Calculator calculator, final BindingResult binding) {
 
@@ -87,4 +85,10 @@ public class ProfileController extends AbstractController {
 		return result;
 	}
 
+	// Action-3 ---------------------------------------------------------------	
+
+	@RequestMapping("/action-3")
+	public ModelAndView action3() {
+		throw new RuntimeException("Oops! An *expected* exception was thrown. This is a normal behaviour.");
+	}
 }
